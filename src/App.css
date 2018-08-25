@@ -26,3 +26,8 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.gameInfo h2 {
+  display: inline;
+  margin: 20px;
+}
