@@ -8,7 +8,7 @@ export default function Hangman(props) {
   return (
     <div>
       {/* <div className="gameInfo"> */}
-      <Grid container direction="row" justify="center" alignItems="center">
+      <Grid container spacing={40} direction="row" justify="center" alignItems="center">
         <Grid item>
           <Button variant="contained" color="primary" onClick={() => props.startNewGameBtn(gameLib.randomWord())}>NEW GAME</Button>
         </Grid>

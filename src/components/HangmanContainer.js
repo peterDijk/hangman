@@ -27,7 +27,7 @@ class HangmanContainer extends React.PureComponent {
     return (
       <div>
         <Paper className="paper">
-          <Grid container direction="row" justify="center" alignItems="center">
+          <Grid container direction="column" justify="center" alignItems="center">
             <Grid item>
               <Hangman 
                 showGuessString={gameLib.showGuess(this.props.game.word, this.props.game.guesses)}
