@@ -1,12 +1,14 @@
 import * as React from 'react'
 import * as gameLib from '../lib/game'
 import propTypes from 'prop-types'
+import Button from '@material-ui/core/Button'
+import Grid from '@material-ui/core/Grid';
 
 export default function Hangman(props) {
   return (
     <div>
       <div className="gameInfo">
-        <button onClick={() => props.startNewGameBtn(gameLib.randomWord())}>NEW GAME</button>
+        <Button variant="contained" color="primary" onClick={() => props.startNewGameBtn(gameLib.randomWord())}>NEW GAME</Button>
         <h2>{props.wrongGuessCountNumber} wrong guesses</h2>
         {(props.gameFinishedBoolean && props.isWinnerBoolean) && <h2>you have WON!</h2> }
         {(props.gameFinishedBoolean && !props.isWinnerBoolean) && <h2>you have LOST</h2> }
@@ -14,6 +16,7 @@ export default function Hangman(props) {
       <div>
         <h3>{props.showGuessString}</h3>
       </div>
+
     </div>
   )
 }

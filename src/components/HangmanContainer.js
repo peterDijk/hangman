@@ -7,6 +7,8 @@ import Hangman from './Hangman'
 import Guess from './Guess'
 import propTypes from 'prop-types'
 
+import Paper from '@material-ui/core/Paper';
+
 
 class HangmanContainer extends React.PureComponent {
 
@@ -23,14 +25,17 @@ class HangmanContainer extends React.PureComponent {
     if (!this.props.game.word) return null
     return (
       <div>
-        <Hangman 
-          showGuessString={gameLib.showGuess(this.props.game.word, this.props.game.guesses)}
-          wrongGuessCountNumber={gameLib.wrongGuessCount(this.props.game.word, this.props.game.guesses)}
-          gameFinishedBoolean={gameLib.gameFinished(this.props.game.word, this.props.game.guesses)}
-          isWinnerBoolean={gameLib.isWinner(this.props.game.word, this.props.game.guesses)}
-          startNewGameBtn={this.props.newGame}
-          />
-        <Guess clickBtn={this.props.makeGuess} />
+        <Paper className="paper">
+        
+          <Hangman 
+            showGuessString={gameLib.showGuess(this.props.game.word, this.props.game.guesses)}
+            wrongGuessCountNumber={gameLib.wrongGuessCount(this.props.game.word, this.props.game.guesses)}
+            gameFinishedBoolean={gameLib.gameFinished(this.props.game.word, this.props.game.guesses)}
+            isWinnerBoolean={gameLib.isWinner(this.props.game.word, this.props.game.guesses)}
+            startNewGameBtn={this.props.newGame}
+            />
+          <Guess clickBtn={this.props.makeGuess} />
+        </Paper>
       </div>
     )
   }
