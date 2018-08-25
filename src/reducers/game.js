@@ -8,7 +8,9 @@ export default (state = {}, action = {}) => {
         guesses: []
       }
     case MAKE_GUESS:
-      return action.payload
+      const newState = {...state}
+      newState.guesses = [...newState.guesses, action.payload]
+      return newState
     default:
       return state
   }
