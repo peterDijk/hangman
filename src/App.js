@@ -13,16 +13,12 @@ const theme = createMuiTheme({
   palette: {
     primary: green,
     secondary: purple,
-  },
-  status: {
-    danger: 'orange',
-  },
+  }
 })
 
 class App extends Component {
 
   render() {
-    console.log(theme)
     return (
       <MuiThemeProvider theme={theme}>
         <div>

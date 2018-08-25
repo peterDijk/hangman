@@ -26,7 +26,6 @@ class HangmanContainer extends React.PureComponent {
     return (
       <div>
         <Paper className="paper">
-        
           <Hangman 
             showGuessString={gameLib.showGuess(this.props.game.word, this.props.game.guesses)}
             wrongGuessCountNumber={gameLib.wrongGuessCount(this.props.game.word, this.props.game.guesses)}
