@@ -15,7 +15,11 @@ function Hangman(props) {
     <div>
       <Grid container spacing={16} direction="row" justify="center" alignItems="center">
         <Grid item>
-          <Button variant="contained" color="primary" onClick={() => props.startNewGameBtn(gameLib.randomWord())}>NEW GAME</Button>
+          <Button variant="contained" color="primary" onClick={() => props.startNewGameBtn(gameLib.randomWord())}>
+            <Typography className={classes.pos} color="textSecondary">
+              NEW GAME
+            </Typography>
+          </Button>
         </Grid>
       </Grid>
       <Grid container spacing={16} direction="row" justify="center" alignItems="center">
@@ -76,7 +80,7 @@ const styles = {
     fontSize: 14,
   },
   pos: {
-    marginBottom: 12,
+    // marginBottom: 24,
   },
 }
 
