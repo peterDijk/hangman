@@ -1,9 +1,12 @@
 import {NEW_GAME, MAKE_GUESS} from '../actions/game.js'
 
-export default (state = [], action = {}) => {
+export default (state = {}, action = {}) => {
   switch(action.type) {
     case NEW_GAME:
-      return action.payload
+      return {
+        word: action.payload,
+        guesses: []
+      }
     case MAKE_GUESS:
       return action.payload
     default:

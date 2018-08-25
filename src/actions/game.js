@@ -1,10 +1,10 @@
 // import {loading} from './loading'
 
 export const NEW_GAME = 'NEW_GAME'
-export function newGame() {
+export function newGame(word) {
   return {
     type: NEW_GAME,
-    payload: []
+    payload: word
   }
 }
 
