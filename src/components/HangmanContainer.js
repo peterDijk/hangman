@@ -9,20 +9,11 @@ import Guess from './Guess'
 class HangmanContainer extends React.PureComponent {
 
   componentDidMount(){
-    // console.log(gameLib.randomWord())
     this.props.newGame(gameLib.randomWord())
-    // console.log(game.showGuess(this.props.game.word, this.props.game.guesses))
-    console.log(this.props)
   }
 
   componentDidUpdate() {
     console.log('game word: ', this.props.game.word)
-    console.log('showGuess: ', gameLib.showGuess(this.props.game.word, this.props.game.guesses))
-    console.log('wrongGuessCount: ', gameLib.wrongGuessCount(this.props.game.word, this.props.game.guesses))
-    if (gameLib.gameFinished(this.props.game.word, this.props.game.guesses)) {
-      console.log('game finished')
-      console.log(gameLib.isWinner(this.props.game.word, this.props.game.guesses))
-    } 
   }
 
   newGuess = (letter) => {
@@ -30,7 +21,6 @@ class HangmanContainer extends React.PureComponent {
   }
 
   startNewGame = () => {
-    console.log('new game')
     this.props.newGame(gameLib.randomWord())
   }
 
@@ -49,7 +39,6 @@ class HangmanContainer extends React.PureComponent {
       </div>
     )
   }
-
 }
 
 const mapStateToProps = (state) => {
