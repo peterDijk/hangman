@@ -22,6 +22,24 @@
   padding: 20px;
 }
 
+.gameInfo {
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+.gameInfo .left {
+  display: inline-block;
+  width: 33%;
+}
+
+.gameInfo .middle {
+  display: inline;
+}
+
+.gameInfo .right {
+  display: inline;
+}
 
 .gameInfo h2 {
   display: inline;
