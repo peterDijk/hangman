@@ -1,6 +1,7 @@
 import * as React from 'react'
 import {connect} from 'react-redux'
 import {newGame, makeGuess} from '../actions/game'
+import {loading} from '../actions/loading'
 import * as gameLib from '../lib/game'
 import Hangman from './Hangman'
 import Guess from './Guess'
@@ -10,10 +11,12 @@ import propTypes from 'prop-types'
 class HangmanContainer extends React.PureComponent {
 
   componentDidMount(){
+    this.props.loading(true)
     this.props.newGame(gameLib.randomWord())
   }
 
   componentDidUpdate() {
+    this.props.loading(false)
     console.log('game word: ', this.props.game.word)
   }
 
@@ -46,4 +49,4 @@ HangmanContainer.propTypes = {
   makeGuess: propTypes.func
 }
 
-export default connect(mapStateToProps, {newGame, makeGuess})(HangmanContainer)
+export default connect(mapStateToProps, {newGame, makeGuess, loading})(HangmanContainer)
