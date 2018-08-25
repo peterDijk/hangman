@@ -1,10 +1,13 @@
 import * as React from 'react'
 import {connect} from 'react-redux'
+import {newGame} from '../actions/game'
+
 
 class HangmanContainer extends React.PureComponent {
 
   componentDidMount(){
-    console.log(this.props.game)
+    console.log(this.props)
+    this.props.newGame()
   }
 
   render() {
@@ -19,4 +22,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(HangmanContainer)
+export default connect(mapStateToProps, {newGame})(HangmanContainer)
