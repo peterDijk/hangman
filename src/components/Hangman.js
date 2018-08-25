@@ -9,6 +9,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
 
 function Hangman(props) {
   const { classes } = props
@@ -21,14 +22,28 @@ function Hangman(props) {
         </Grid>
         <Grid item>
           <Card className={classes.card}>
-            <h2>{props.wrongGuessCountNumber}</h2>
-             wrong guesses
+            <CardContent>
+              <Typography variant="headline" component="h2">
+                {props.wrongGuessCountNumber}
+              </Typography>
+              <Typography className={classes.pos} color="textSecondary">
+                wrong guesses
+              </Typography>
+            </CardContent>
           </Card>
         </Grid>
         <Grid item>
           <Card className={classes.card}>
-            {(props.gameFinishedBoolean && props.isWinnerBoolean) && <h2>you have WON!</h2> }
-            {(props.gameFinishedBoolean && !props.isWinnerBoolean) && <h2>you have LOST</h2> }
+            <CardContent>
+              <Typography className={classes.pos} color="textSecondary">
+                you have
+              </Typography>
+              <Typography variant="headline" component="h2">
+                {(props.gameFinishedBoolean && !props.isWinnerBoolean) && 'LOST' }
+                {(props.gameFinishedBoolean && props.isWinnerBoolean) && 'WON!' }
+                {(!props.gameFinishedBoolean) && '...' }
+              </Typography>
+            </CardContent>
           </Card>
         </Grid>
       {/* </div> */}
@@ -51,7 +66,8 @@ Hangman.propTypes = {
 
 const styles = {
   card: {
-    minWidth: 275,
+    minWidth: 150,
+    // padding: 4
   },
   bullet: {
     display: 'inline-block',
