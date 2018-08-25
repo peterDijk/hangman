@@ -19,6 +19,10 @@ class HangmanContainer extends React.PureComponent {
     console.log('game word: ', this.props.game.word)
     console.log('showGuess: ', gameLib.showGuess(this.props.game.word, this.props.game.guesses))
     console.log('wrongGuessCount: ', gameLib.wrongGuessCount(this.props.game.word, this.props.game.guesses))
+    if (gameLib.gameFinished(this.props.game.word, this.props.game.guesses)) {
+      console.log('game finished')
+      console.log(gameLib.isWinner(this.props.game.word, this.props.game.guesses))
+    } 
   }
 
   newGuess = (letter) => {
