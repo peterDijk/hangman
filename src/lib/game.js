@@ -18,6 +18,10 @@ export const gameFinished = (word, guesses) => {
   return (wrongGuessLimit(word, guesses) || isWinner(word, guesses))
 }
 
+export const letterIsGuessed = (guesses, letter) => {
+  return guesses.includes(letter)
+}
+
 export const wordList = [
   // Borrowed from xkcd password generator which borrowed it from wherever
   "ability","able","aboard","about","above","accept","accident","according",
