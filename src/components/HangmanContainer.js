@@ -17,7 +17,6 @@ class HangmanContainer extends React.PureComponent {
 
   componentDidUpdate() {
     this.props.loading(false)
-    console.log('game word: ', this.props.game.word)
   }
 
   render() {
