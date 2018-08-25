@@ -8,6 +8,7 @@ import Guess from './Guess'
 import propTypes from 'prop-types'
 
 import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
 
 
 class HangmanContainer extends React.PureComponent {
@@ -26,14 +27,20 @@ class HangmanContainer extends React.PureComponent {
     return (
       <div>
         <Paper className="paper">
-          <Hangman 
-            showGuessString={gameLib.showGuess(this.props.game.word, this.props.game.guesses)}
-            wrongGuessCountNumber={gameLib.wrongGuessCount(this.props.game.word, this.props.game.guesses)}
-            gameFinishedBoolean={gameLib.gameFinished(this.props.game.word, this.props.game.guesses)}
-            isWinnerBoolean={gameLib.isWinner(this.props.game.word, this.props.game.guesses)}
-            startNewGameBtn={this.props.newGame}
-            />
-          <Guess clickBtn={this.props.makeGuess} />
+          <Grid container direction="row" justify="center" alignItems="center">
+            <Grid item>
+              <Hangman 
+                showGuessString={gameLib.showGuess(this.props.game.word, this.props.game.guesses)}
+                wrongGuessCountNumber={gameLib.wrongGuessCount(this.props.game.word, this.props.game.guesses)}
+                gameFinishedBoolean={gameLib.gameFinished(this.props.game.word, this.props.game.guesses)}
+                isWinnerBoolean={gameLib.isWinner(this.props.game.word, this.props.game.guesses)}
+                startNewGameBtn={this.props.newGame}
+                />
+              </Grid>
+              <Grid item>
+                <Guess clickBtn={this.props.makeGuess} />
+              </Grid>
+          </Grid>
         </Paper>
       </div>
     )
