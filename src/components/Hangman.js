@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as gameLib from '../lib/game'
 import propTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
+import Grid from '@material-ui/core/Grid'
 
 export default function Hangman(props) {
   return (

@@ -7,7 +7,7 @@ import Hangman from './Hangman'
 import Guess from './Guess'
 import propTypes from 'prop-types'
 
-import Paper from '@material-ui/core/Paper';
+import Paper from '@material-ui/core/Paper'
 
 
 class HangmanContainer extends React.PureComponent {

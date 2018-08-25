@@ -14,11 +14,11 @@
 }
 
 .paper {
-  width: 700px;
+  /* width: 700px; */
   position: relative;
   top: 40px;
   margin: auto;
-  height: 300px;
+  /* height: 300px; */
   padding: 20px;
 }
 
