@@ -7,7 +7,7 @@ import HangmanContainer from './components/HangmanContainer'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import purple from '@material-ui/core/colors/purple'
 import green from '@material-ui/core/colors/green'
-import NavBar from './components/NavBar'
+import Paper from '@material-ui/core/Paper'
 
 const theme = createMuiTheme({
   palette: {
@@ -22,10 +22,12 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <div>
-          <NavBar />
+          
           <div className="App">
-            <Route exact path="/" component={Welcome} />
-            <Route exact path="/hangman" component={HangmanContainer} />
+            <Paper className="paper">
+              <Route exact path="/" component={Welcome} />
+              <Route exact path="/hangman" component={HangmanContainer} />
+            </Paper>
           </div>
         </div>
       </MuiThemeProvider>

@@ -6,8 +6,6 @@ import * as gameLib from '../lib/game'
 import Hangman from './Hangman'
 import Guess from './Guess'
 import propTypes from 'prop-types'
-
-import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 
 
@@ -25,8 +23,6 @@ class HangmanContainer extends React.PureComponent {
   render() {
     if (!this.props.game.word) return null
     return (
-      <div>
-        <Paper className="paper">
           <Grid container direction="column" justify="center" alignItems="center">
             <Grid item>
               <Hangman 
@@ -41,8 +37,6 @@ class HangmanContainer extends React.PureComponent {
                 <Guess clickBtn={this.props.makeGuess} />
               </Grid>
           </Grid>
-        </Paper>
-      </div>
     )
   }
 }

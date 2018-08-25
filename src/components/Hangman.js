@@ -20,6 +20,8 @@ function Hangman(props) {
         <Grid item>
           <Button variant="contained" color="primary" onClick={() => props.startNewGameBtn(gameLib.randomWord())}>NEW GAME</Button>
         </Grid>
+      </Grid>
+      <Grid container spacing={16} direction="row" justify="center" alignItems="center">
         <Grid item>
           <Card className={classes.card}>
             <CardContent>
