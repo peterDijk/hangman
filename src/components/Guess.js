@@ -1,4 +1,5 @@
 import * as React from 'react'
+import propTypes from 'prop-types'
 
 export default function Guess(props) {
   return (
@@ -37,4 +38,8 @@ export default function Guess(props) {
       </div>
     </div>
   )
+}
+
+Guess.propTypes = {
+  clickBtn: propTypes.func
 }

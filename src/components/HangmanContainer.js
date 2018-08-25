@@ -4,6 +4,7 @@ import {newGame, makeGuess} from '../actions/game'
 import * as gameLib from '../lib/game'
 import Hangman from './Hangman'
 import Guess from './Guess'
+import propTypes from 'prop-types'
 
 
 class HangmanContainer extends React.PureComponent {
@@ -22,7 +23,7 @@ class HangmanContainer extends React.PureComponent {
       <div>
         <Hangman 
           showGuessString={gameLib.showGuess(this.props.game.word, this.props.game.guesses)}
-          wrongGuessCountString={gameLib.wrongGuessCount(this.props.game.word, this.props.game.guesses)}
+          wrongGuessCountNumber={gameLib.wrongGuessCount(this.props.game.word, this.props.game.guesses)}
           gameFinishedBoolean={gameLib.gameFinished(this.props.game.word, this.props.game.guesses)}
           isWinnerBoolean={gameLib.isWinner(this.props.game.word, this.props.game.guesses)}
           startNewGameBtn={this.props.newGame}
@@ -37,6 +38,12 @@ const mapStateToProps = (state) => {
   return {
     game: state.game
   }
+}
+
+HangmanContainer.propTypes = {
+  game: propTypes.object,
+  newGame: propTypes.func,
+  makeGuess: propTypes.func
 }
 
 export default connect(mapStateToProps, {newGame, makeGuess})(HangmanContainer)
